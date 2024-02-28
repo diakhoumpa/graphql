@@ -1,0 +1,33 @@
+{
+  "annotations": {
+    "changelogDate": "20240228183034"
+  },
+  "clientRootFolder": "ms3",
+  "databaseType": "sql",
+  "entityTableName": "etudiant",
+  "fields": [
+    {
+      "fieldName": "adresse",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prenom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "age",
+      "fieldType": "Integer"
+    }
+  ],
+  "microserviceName": "ms3",
+  "name": "Etudiant",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "no"
+}

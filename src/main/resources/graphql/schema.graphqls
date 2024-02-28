@@ -1,0 +1,18 @@
+type Query {
+    etudiants: [Etudiant!]!
+    etudiant(id: ID!): Etudiant!
+}
+
+type Mutation {
+    createEtudiant(nom: String!, prenom: String!, adresse: String!, age: Int!): Etudiant!
+    updateEtudiant(id: ID!, nom: String!, prenom: String!, adresse: String!, age: Int!): Etudiant!
+    deleteEtudiant(id: ID!): Boolean!
+}
+
+type Etudiant {
+    id: ID!
+    nom: String!
+    prenom: String!
+    adresse: String!
+    age: Int!
+}
