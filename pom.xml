@@ -3,7 +3,7 @@
                              https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>max.dev</groupId>
+    <groupId>com.groupeisi</groupId>
     <artifactId>ms-3</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -22,7 +22,7 @@
         <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <start-class>max.dev.Ms3App</start-class>
+        <start-class>com.groupeisi.Ms3App</start-class>
         <argLine>-Djava.security.egd=file:/dev/./urandom -Xmx1G</argLine>
         <m2e.apt.activation>jdt_apt</m2e.apt.activation>
         <run.addResources>false</run.addResources>
@@ -394,7 +394,7 @@
                     <version>${spotless-maven-plugin.version}</version>
                     <configuration>
                         <java>
-                            <!-- <removeUnusedImports/> -->
+                           
                         </java>
                     </configuration>
                     <executions>
@@ -798,11 +798,12 @@
                             <artifactId>liquibase-core</artifactId>
                             <version>${liquibase.version}</version>
                         </dependency>
+                        <!-- https://mvnrepository.com/artifact/org.liquibase/liquibase-core -->
                         <dependency>
-                            <groupId>org.liquibase.ext</groupId>
-                            <artifactId>liquibase-hibernate6</artifactId>
-                            <version>${liquibase.version}</version>
+                            <groupId>org.liquibase</groupId>
+                            <artifactId>liquibase-core</artifactId>
                         </dependency>
+
                         <dependency>
                             <groupId>org.springframework.boot</groupId>
                             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -988,17 +989,12 @@
                             </execution>
                         </executions>
                     </plugin>
-                    <plugin>
-                        <groupId>io.github.git-commit-id</groupId>
-                        <artifactId>git-commit-id-maven-plugin</artifactId>
-                    </plugin>
+
                 </plugins>
             </build>
             <dependencies>
-                <dependency>
-                    <groupId>com.mysql</groupId>
-                    <artifactId>mysql-connector-j</artifactId>
-                </dependency>
+                <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+
             </dependencies>
         </profile>
         <profile>
@@ -1008,12 +1004,12 @@
             </properties>
         </profile>
         <profile>
-            <id>war</id>
+            <id>jar</id>
             <build>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-war-plugin</artifactId>
+                        <artifactId>maven-jar-plugin</artifactId>
                     </plugin>
                 </plugins>
             </build>
@@ -1024,18 +1020,8 @@
             -->
             <id>zipkin</id>
             <dependencies>
-                <dependency>
-                    <groupId>io.micrometer</groupId>
-                    <artifactId>micrometer-tracing</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>io.micrometer</groupId>
-                    <artifactId>micrometer-tracing-bridge-brave</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>io.zipkin.reporter2</groupId>
-                    <artifactId>zipkin-reporter-brave</artifactId>
-                </dependency>
+                <!-- https://mvnrepository.com/artifact/io.micrometer/micrometer-tracing -->
+
             </dependencies>
         </profile>
     </profiles>
